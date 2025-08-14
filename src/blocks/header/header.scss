@@ -1,0 +1,158 @@
+@use 'lib' as *;
+
+.header {
+	$self: &;
+
+	&__container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 48px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #2E2E2E4D;
+
+        @include media("<=xxlg") {
+            padding-top: 10px;
+        }
+	}
+
+	&__logo {
+        height: 70px;
+        flex: 0 0 auto;
+
+        img {
+            height: 100%;
+        }
+
+        @include media("<=xs") {
+            height: 60px;
+        }
+	}
+
+	&__menu {
+        &.active {
+            opacity: 1;
+            pointer-events: all;
+            visibility: visible;
+        }
+        @include media("<=xxlg") {
+            position: fixed;
+            inset: 0;
+            width: 100%; height: 100%;
+            opacity: 0;
+            pointer-events: none;
+            visibility: hidden;
+            transition: opacity var(--trans), visibility var(--trans);
+            z-index: 99;
+        }
+	}
+
+	&__list {
+        display: flex;
+        flex-direction: row;
+        gap: 35px;
+	}
+
+	&__list-item {
+        font-size: 18px;
+        font-weight: 500;
+        text-align: center;
+        padding: 10px 0px;
+        position: relative;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            height: 1px;
+            width: 0%;
+            top: 100%; left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--text);
+            transition: width var(--trans);
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+	}
+
+	&__phone {
+        text-wrap: nowrap;
+	}
+
+	&__phone--mobile {
+        @include media(">md") {
+            display: none;
+        }
+	}
+
+    &__btn {
+        padding: 18.5px 30px;
+        background: var(--blue-gradient);
+        border-radius: 8px;
+        color: var(--white);
+        font-size: 18px;
+        font-weight: 700;
+
+        @include media("<=xxlg") {
+            display: none;
+        }
+    }
+
+    &__burger {
+        width: 54px; height: 54px;
+        border-radius: 8px;
+        background: var(--blue-gradient);
+        padding: 14px 10px;
+        position: relative;
+        z-index: 100;
+
+        @include media(">xxlg") {
+            display: none;
+        }
+
+        span {
+            display: block;
+            background-color: var(--white);
+            height: 2px; width: 100%;
+            border-radius: 1px;
+            transition: all var(--trans);
+        }
+
+        span {
+            position: absolute;
+            width: calc(100% - 20px);
+            left: 50%;
+        }
+
+        span:nth-child(1) {
+            top: 14px;
+            transform: translateX(-50%);
+        }
+
+        span:nth-child(2) {
+            top: 50%;
+            transform: translateY(-50%) translateX(-50%);
+        }
+
+        span:nth-child(3) {
+            top: calc(100% - 14px);
+            transform: translateX(-50%);
+        }
+
+        &.active {
+            span:nth-child(2) {
+                opacity: 0;
+            }
+            span:nth-child(1) {
+                top: 50%; left: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+            span:nth-child(3) {
+                top: 50%; left: 50%;
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+    }
+}

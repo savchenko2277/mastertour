@@ -12,15 +12,25 @@ $matches: (
 );
 
 :root {
-	--size: 16px;
-	--background: #fafafa;
+	--size: 18px;
 	--text: #272727;
 	--blue: #113859;
 	--blue-rgb: 17, 56, 89;
-	--container: 1400px;
-	--gap: 24px;
-	
-	@media screen and (max-width: 480px) {
-		--gap: 16px;
-	}
+	--container: 1680px;
+	--gap: 15px;
+
+    // --- Colors --- //
+    --white: #fff;
+    --black: #000;
+    --yellow: #F8B816;
+
+    --blue-gradient: linear-gradient(270deg, #2FA5DE 0%, #1E77BB 97%);
+    --green-gradient: linear-gradient(270deg, #91C020 0%, #2F9C37 89.43%);
+    --yellow-gradient: linear-gradient(270deg, #F8DA18 0%, #F4980E 100%);
+
+    --text-white: #F5F4F0;
+    --text-gray: #2E2E2E;
+
+    --trans: 0.3s ease-in-out;
+
 }

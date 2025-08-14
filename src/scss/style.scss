@@ -17,32 +17,26 @@
 // @use "../../node_modules/swiper/swiper";
 
 // Browsersync mark
-#__bs_notify__ { 
-	background-color: rgba(27, 32, 50, 0.4) !important;
-	color: rgba(250, 250, 250, 0.6) !important;
-}
+// #__bs_notify__ { 
+// 	background-color: rgba(27, 32, 50, 0.4) !important;
+// 	color: rgba(250, 250, 250, 0.6) !important;
+// }
 
-// Include breakpoints badge
-body { @include screen-media(); }
+// // Include breakpoints badge
+// body { @include screen-media(); }
 
 
-// @include font-face("Montserrat-ExtraLight", "MR", 200);
-// @include font-face("Montserrat-ExtraBold", "MR", 800);
-// @include font-face("Montserrat-SemiBold", "MR", 600);
-// @include font-face("Montserrat-Regular", "MR", 400);
-// @include font-face("Montserrat-Medium", "MR", 500);
-// @include font-face("Montserrat-Light", "MR", 300);
-// @include font-face("Montserrat-Black", "MR", 900);
-// @include font-face("Montserrat-Bold", "MR", 700);
-// @include font-face("Montserrat-Thin", "MR", 100);
+@include font-face("gothampro", "Gotham", 400);
+@include font-face("gothampro_medium", "Gotham", 500);
+@include font-face("gothampro_bold", "Gotham", 700);
 
 body, html {
 	// scrollbar-gutter: stable;
 	// scroll-behavior: smooth;	
 	background-color: var(--background);
 	font-size: var(--size);
-	color: var(--text);
-	font-family: sans-serif;
+	color: var(--text-gray);
+	font-family: "Gotham", sans-serif;
 	line-height: 1.2;
 	font-weight: 400;
 	display: flex;

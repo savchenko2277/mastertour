@@ -1,0 +1,33 @@
+@use "functions.scss" as *;
+
+.section-p {
+    padding: fluid(50px, 25px) 0;
+}
+
+.section-p-b {
+    padding-bottom: fluid(50px, 25px);
+}
+
+.section-p-t {
+    padding-top: fluid(50px, 25px);
+}
+
+.title {
+    font-weight: 500;
+}
+
+.title-64 {
+    font-size: fluid(64px, 26px);
+}
+
+.title-36 {
+    font-size: fluid(36px, 26px);
+}
+
+.title-22 {
+    font-size: fluid(22px, 20px);
+}
+
+p {
+    margin-bottom: fluid(18px, 14px);
+}

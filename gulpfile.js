@@ -34,7 +34,7 @@ let pth = {
 		html: './docs/',
 		js: './docs/',
 		css: './docs/',
-		img: './docs/images/',
+		img: './docs/img/',
 		fnts: './docs/fonts/'
 	},
 	src: {
@@ -43,10 +43,10 @@ let pth = {
 		js: './src/js/common.js',
 		css: './src/scss/style.scss',
 		scss: './src/scss/lib/',
-		// img: './src/images/**/!(icon-*.svg|shape-*.svg)',
-		img: './src/images/!(icons|static){,/**}',
-		static: './src/images/static/**/*',
-		icn: './src/images/icons/**/*.svg',
+		// img: './src/img/**/!(icon-*.svg|shape-*.svg)',
+		img: './src/img/!(icons|static){,/**}',
+		static: './src/img/static/**/*',
+		icn: './src/img/icons/**/*.svg',
 		fnts: './src/fonts/**/*.*',
 		tmpl: './src/templates/'
 	},
@@ -54,9 +54,9 @@ let pth = {
 		html: './src/**/*.html',
 		js: ['./src/js/**/*.js','./src/blocks/**/(*.js|*.json)'],
 		css: ['./src/scss/**/*.scss','./src/blocks/**/*.scss'],
-		img: ['./src/images/**', '!./src/images/icons/**'],
-		static: './src/images/static/**/*',
-		icn: './src/images/icons/**/*.svg',
+		img: ['./src/img/**', '!./src/img/icons/**'],
+		static: './src/img/static/**/*',
+		icn: './src/img/icons/**/*.svg',
 		fnts: './src/fonts/**/*.*'
 	}
 };
