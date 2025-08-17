@@ -1,17 +1,44 @@
 @use 'lib' as *;
 
 .top {
-	$self: &;
+    $self: &;
+
     padding-top: 120px;
 
-    .tourvisor {
-        width: 100%; height: 150px;
-        background: var(--blue-gradient);
-        border-radius: 8px;
-        overflow: hidden;
+    &_pages &__container {
+        max-height: 700px;
+        display: flex;
+        align-items: end;
+        padding: 60px fluid(60px, 10px);
     }
 
-	&__container {
+    &__nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0px;
+        font-size: 16px;
+        margin-bottom: 20px;
+
+        li {
+            display: flex;
+            flex-direction: row;
+            color: rgba($color: #2E2E2E, $alpha: 0.3);
+        }
+
+        li:last-child {
+            color: rgba($color: #2E2E2E, $alpha: 1);
+        }
+
+        li:not(:last-child)::after {
+            content: "\25b6";
+            display: block;
+            margin: 0 10px;
+            color: #2E2E2E;
+        }
+    }
+
+    &__container {
         position: relative;
         height: calc(100vh - 120px - 24px);
         max-height: 900px;
@@ -19,18 +46,40 @@
         border-radius: 8px;
         overflow: hidden;
         padding: fluid(40px, 10px);
-	}
+    }
 
-	&__bg {
+    &__bg {
         position: absolute;
         inset: 0;
-        width: 100%; height: 100%;
+        width: 100%;
+        height: 100%;
         z-index: -1;
 
         img {
             object-fit: cover;
-            width: 100%; height: 100%;
+            width: 100%;
+            height: 100%;
         }
-	}
+    }
+
+    &__frame {
+        background: linear-gradient(270deg, rgba(47, 165, 222, 0.6) 0%, rgba(30, 119, 187, 0.6) 97%);
+        padding: 30px;
+        color: var(--white);
+        max-width: 578px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__desc {
+        line-height: 170%;
+        font-size: fluid(16px, 14px);
+    }
+
+    &__title {
+        line-height: 100%;
+    }
 
 }

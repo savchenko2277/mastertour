@@ -1,0 +1,259 @@
+@@include("_head.html", {"id":"home"}) 
+@@include("_header.html") 
+
+<section class="top section-p">
+    <div class="top__container container">
+        <div class="tourvisor"></div>
+        <div class="top__bg">
+            <img loading="lazy" alt="image" src="./img/beach.webp">
+        </div>
+    </div>
+</section>
+
+<!-- <section class="destinations section-p">
+    <div class="destinations__container container">
+        <h2 class="destinations__title title title-36">
+            Популярные направления
+        </h2>
+        <div class="destinations__tabs-container">
+            <div class="destinations__navigation">
+                <button class="destinations__navigation-button" type="button" aria-label="Выбрать направление">Турция</button>
+                <button class="destinations__navigation-button" type="button" aria-label="Выбрать направление">Египет</button>
+                <button class="destinations__navigation-button" type="button" aria-label="Выбрать направление">Мальдивы</button>
+                <button class="destinations__navigation-button" type="button" aria-label="Выбрать направление">Тайланд</button>
+                <button class="destinations__navigation-button" type="button" aria-label="Выбрать направление">Вьетнам</button>
+                <button class="destinations__navigation-button" type="button" aria-label="Выбрать направление">Россия</button>
+                <button class="destinations__navigation-button" type="button" aria-label="Выбрать направление">Эмираты</button>
+                <button class="destinations__navigation-button" type="button" aria-label="Выбрать направление">Индонезия</button>
+                <button class="destinations__navigation-button" type="button" aria-label="Выбрать направление">Паттая</button>
+                <button class="destinations__navigation-button" type="button" aria-label="Выбрать направление">Шри Ланка</button>
+            </div>
+            <div class="destinations__tabs">
+                <div class="destinations__tab">
+                    <div class="destinations__tab-swiper swiper">
+                        <div class="swiper-wrapper">
+                            @@include("_card-destinations.html", {
+                                "cardCls": "destinations__card swiper-slide",
+                                "cardImage": "./img/destinations/1.webp",
+                                "cardLocation": "Турция, Анталия(Antalya)",
+                                "cardTitle": "Rixos Downtown Antalya",
+                                "cardDesc": "отличные пляжи, развлечения, активная жизнь",
+                                "cardPrice": "от 65 000 ₽/чел",
+                            })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<section class="hot-tours section-p">
+    <div class="hot-tours__container container">
+        <h2 class="hot-tours__title title title-36">Горящие туры</h2>
+        <div class="hot-tours__cards">
+            @@include("_card-ht.html", {
+                "cardTitle": "🔥 Шри-Ланка",
+                "cardCls": "hot-tours__card",
+                "cardImage": "1",
+                "cardText": "<p>Шри-Ланка — волшебный остров в Индийском океане. Песчаные пляжи, чайные плантации и экзотика без переплат!</p><p>Вылет на этой неделе | Все включено</p>",
+                "cardPrice": "от 89 000 ₽/чел",
+            })
+            @@include("_card-ht.html", {
+                "cardTitle": "🌴 Бали",
+                "cardCls": "hot-tours__card",
+                "cardImage": "2",
+                "cardText": "<p>Бали — остров мечты для отдыха и перезагрузки. Серфинг, рисовые террасы и закаты над океаном.</p><p>Горящий тур на 10 ночей | Завтраки включены</p>",
+                "cardPrice": "от 115 000 ₽/чел",
+            })
+            @@include("_card-ht.html", {
+                "cardTitle": "🏝 Мальдивы",
+                "cardCls": "hot-tours__card",
+                "cardImage": "3",
+                "cardText": "<p>Мальдивы — рай ближе, чем кажется.Прямой перелёт, вилла у воды, тёплое море каждый день.</p><p>Вылет в ближайшие дни | Всё включено</p>",
+                "cardPrice": "от 149 000 ₽/чел",
+            })
+            @@include("_card-ht.html", {
+                "cardTitle": "☀ Египет",
+                "cardCls": "hot-tours__card",
+                "cardImage": "4",
+                "cardText": "<p>Египет — классика отдыха без визы. Красное море, кораллы, солнце круглый год!</p><p>Тур на 7 ночей | Всё включено</p>",
+                "cardPrice": "от 89 000 ₽/чел",
+            })
+        </div>
+    </div>
+</section>
+
+<section class="about section-p">
+    <div class="about__container container">
+        <div class="about__cards">
+            <div class="about__card">
+                <h4 class="about__card-title">Гибкая система скидок</h4>
+                <p class="about__card-text">
+                    На пакетные туры, <b>«всё включено»</b> <br> и индивидуальные поездки
+                </p>
+            </div>
+            <div class="about__card">
+                <h4 class="about__card-title">Удобная оплата</h4>
+                <p class="about__card-text">
+                    Оплата наличными, картами, безналичная — <br> <b>как удобно вам.</b>
+                </p>
+            </div>
+            <div class="about__card">
+                <h4 class="about__card-title">Выгодные цены</h4>
+                <p class="about__card-text">
+                    Лучшее соотношение предлагаемой <b>цены <br> и качества</b> вашего отдыха.
+                </p>
+            </div>
+            <div class="about__card">
+                <h4 class="about__card-title">Помощь с билетами и визами</h4>
+                <p class="about__card-text">
+                    <b>Организуем за Вас весь перелёт</b> и оформив все <br> необходимые документы
+                </p>
+            </div>
+            <div class="about__card">
+                <h4 class="about__card-title">Страховка от срыва поездки</h4>
+                <p class="about__card-text">
+                    <b>Вы всегда застрахованы</b> на случай непредвиденных ситуаций
+                </p>
+            </div>
+            <div class="about__card">
+                <h4 class="about__card-title">Сезонные акции и спецпредложения</h4>
+                <p class="about__card-text">
+                    Горящие туры и <b>скидки</b> на самые <br> популярные направления.
+                </p>
+            </div>
+        </div>
+        <img class="about__img" loading="lazy" alt="image" src="./img/touragent.webp">
+    </div>
+</section>
+
+<section class="partners section-p">
+    <div class="partners__container">
+        <div class="partners__running-line container">
+            <div class="partners__scroll">
+                <div class="partners__scroll-item">
+                    <img loading="lazy" alt="image" src="./img/partners/1.webp">
+                </div>
+                <div class="partners__scroll-item">
+                    <img loading="lazy" alt="image" src="./img/partners/2.webp">
+                </div>
+                <div class="partners__scroll-item">
+                    <img loading="lazy" alt="image" src="./img/partners/3.webp">
+                </div>
+                <div class="partners__scroll-item">
+                    <img loading="lazy" alt="image" src="./img/partners/4.webp">
+                </div>
+                <div class="partners__scroll-item">
+                    <img loading="lazy" alt="image" src="./img/partners/5.webp">
+                </div>
+                <div class="partners__scroll-item">
+                    <img loading="lazy" alt="image" src="./img/partners/6.webp">
+                </div>
+                <div class="partners__scroll-item">
+                    <img loading="lazy" alt="image" src="./img/partners/7.webp">
+                </div>
+                <div class="partners__scroll-item">
+                    <img loading="lazy" alt="image" src="./img/partners/8.webp">
+                </div>
+                <div class="partners__scroll-item">
+                    <img loading="lazy" alt="image" src="./img/partners/9.webp">
+                </div>
+                <div class="partners__scroll-item">
+                    <img loading="lazy" alt="image" src="./img/partners/10.webp">
+                </div>
+            </div>
+            <div class="partners__scroll">
+                <div class="partners__scroll-item">
+                    <img loading="lazy" alt="image" src="./img/partners/1.webp">
+                </div>
+                <div class="partners__scroll-item">
+                    <img loading="lazy" alt="image" src="./img/partners/2.webp">
+                </div>
+                <div class="partners__scroll-item">
+                    <img loading="lazy" alt="image" src="./img/partners/3.webp">
+                </div>
+                <div class="partners__scroll-item">
+                    <img loading="lazy" alt="image" src="./img/partners/4.webp">
+                </div>
+                <div class="partners__scroll-item">
+                    <img loading="lazy" alt="image" src="./img/partners/5.webp">
+                </div>
+                <div class="partners__scroll-item">
+                    <img loading="lazy" alt="image" src="./img/partners/6.webp">
+                </div>
+                <div class="partners__scroll-item">
+                    <img loading="lazy" alt="image" src="./img/partners/7.webp">
+                </div>
+                <div class="partners__scroll-item">
+                    <img loading="lazy" alt="image" src="./img/partners/8.webp">
+                </div>
+                <div class="partners__scroll-item">
+                    <img loading="lazy" alt="image" src="./img/partners/9.webp">
+                </div>
+                <div class="partners__scroll-item">
+                    <img loading="lazy" alt="image" src="./img/partners/10.webp">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@@include("_callback.html", { blockCls: "section-p" });
+
+<section data-news-js class="news section-p">
+    <div class="news__container container">
+        <h2 class="news__title title title-36">Новости ”МастерТур”</h2>
+        <a href="#" class="news__button btn">Все новости</a>
+        <div class="news__items swiper">
+            <div class="swiper-wrapper">
+                <a href="#" class="news__item swiper-slide">
+                    <img src="./img/news/1.webp" alt="" class="news__item-image">
+                    <p class="news__item-date">12 Март 2020</p>
+                    <h4 class="news__item-title title">МИД Таиланда разъяснил правила въезда для россиян</h4>
+                </a>
+                <a href="#" class="news__item swiper-slide">
+                    <img src="./img/news/2.webp" alt="" class="news__item-image">
+                    <p class="news__item-date">14 Сентябрь 2019</p>
+                    <h4 class="news__item-title title">Пляжный отдых с детьми в осенние каникулы</h4>
+                </a>
+                <a href="#" class="news__item swiper-slide">
+                    <img src="./img/news/3.webp" alt="" class="news__item-image">
+                    <p class="news__item-date">14 Август 2019</p>
+                    <h4 class="news__item-title title">Как распределяется бюджет на путешествие</h4>
+                </a>
+                <a href="#" class="news__item swiper-slide">
+                    <img src="./img/news/4.webp" alt="" class="news__item-image">
+                    <p class="news__item-date">31 Июль 2019</p>
+                    <h4 class="news__item-title title">Новости про отдых в Турции</h4>
+                </a>
+                <a href="#" class="news__item swiper-slide">
+                    <img src="./img/news/1.webp" alt="" class="news__item-image">
+                    <p class="news__item-date">12 Март 2020</p>
+                    <h4 class="news__item-title title">МИД Таиланда разъяснил правила въезда для россиян</h4>
+                </a>
+                 <a href="#" class="news__item swiper-slide">
+                    <img src="./img/news/2.webp" alt="" class="news__item-image">
+                    <p class="news__item-date">14 Сентябрь 2019</p>
+                    <h4 class="news__item-title title">Пляжный отдых с детьми в осенние каникулы</h4>
+                </a>
+                <a href="#" class="news__item swiper-slide">
+                    <img src="./img/news/3.webp" alt="" class="news__item-image">
+                    <p class="news__item-date">14 Август 2019</p>
+                    <h4 class="news__item-title title">Как распределяется бюджет на путешествие</h4>
+                </a>
+                <a href="#" class="news__item swiper-slide">
+                    <img src="./img/news/4.webp" alt="" class="news__item-image">
+                    <p class="news__item-date">31 Июль 2019</p>
+                    <h4 class="news__item-title title">Новости про отдых в Турции</h4>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="news__navigation navigation-buttons">
+        <button type="button" class="navigation-button navigation-button_prev"></button>
+        <button type="button" class="navigation-button navigation-button_next"></button>
+    </div> 
+</section>
+
+@@include("_bottom.html")
