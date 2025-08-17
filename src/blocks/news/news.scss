@@ -1,0 +1,89 @@
+@use 'lib' as *;
+
+.news {
+	$self: &;
+
+    position: relative;
+
+	&__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: fluid(50px, 30px) 0;
+	}
+
+	&__title {
+        @include media("<=xs") {
+            order: 0;
+            grid-column: span 2;
+        }
+	}
+
+	&__button {
+        padding: 20px 30px;
+        background: var(--blue-gradient);
+        width: fit-content;
+        margin-left: auto;
+        color: var(--white);
+        font-size: 22px;
+        font-weight: 500;
+        border-radius: 8px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include media("<=xs") {
+            order: 2;
+            grid-column: span 2;
+            width: 100%;
+        }
+	}
+
+	&__items {
+        grid-column: span 2;
+        max-width: 100%;
+
+        @include media("<=xs") {
+            order: 1;
+        }
+	}
+
+	&__item.swiper-slide {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+	}
+
+    &__item:hover &__item-title {
+        color: var(--blue);
+    }
+
+	&__item-image {
+        aspect-ratio: 357 / 240;
+        border-radius: 8px;
+        object-fit: cover;
+        width: 100%;
+
+        @include media("<=xs") {
+            aspect-ratio: 305 / 240;
+        }
+	}
+
+	&__item-date {
+        font-size: 16px;
+        color: rgba($color: #2E2E2E, $alpha: 0.6);
+	}
+
+	&__item-title {
+        font-size: fluid(22px, 18px);
+        transition: color var(--trans);
+	}
+
+    &__navigation {
+        @include media("<=xs") {
+            display: none;
+        }
+    }
+
+}

@@ -1,0 +1,31 @@
+<a href="#" class="card-destinations @@if(this.cardCls){@@cardCls}">
+    <div class="card-destinations__image">
+        <img loading="lazy" alt="image" src="@@cardImage">
+    </div>
+    <p class="card-destinations__location">
+        <svg><use xlink:href="map"></use></svg>
+        @@cardLocation
+    </p>
+    <h4 class="card-destinations__title">
+        @@cardTitle
+    </h4>
+    <p class="card-destinations__desc">
+        @@cardDesc
+    </p>
+    <div class="card-destinations__info">
+        <div class="card-destinations__price">
+            <b>Цена от</b>
+            @@cardPrice
+        </div>
+        <div class="card-destinations__rating">
+            <b>Всё включено</b>
+            <div class="card-destinations__stars">
+                <svg><use xlink:href="star"></use></svg>
+                <svg><use xlink:href="star"></use></svg>
+                <svg><use xlink:href="star"></use></svg>
+                <svg><use xlink:href="star"></use></svg>
+                <svg><use xlink:href="star"></use></svg>
+            </div>
+        </div>
+    </div>
+</a>

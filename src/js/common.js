@@ -10,31 +10,52 @@ document.documentElement.style.setProperty('--sw', `${window.innerWidth - docume
 
 // Единицы высоты (ширины) экрана
 function updateVH() {
-	const { height = window.innerHeight, width = window.innerWidth } = window.visualViewport || {};
-	document.documentElement.style.setProperty('--vh', `${height * 0.01}px`);
-	// document.documentElement.style.setProperty('--vw', `${width * 0.01}px`);
+    const { height = window.innerHeight, width = window.innerWidth } = window.visualViewport || {};
+    document.documentElement.style.setProperty('--vh', `${height * 0.01}px`);
+    // document.documentElement.style.setProperty('--vw', `${width * 0.01}px`);
 }
 
 ['resize', 'orientationchange'].forEach(event => {
-	window.addEventListener(event, throttle(updateVH, 200), { passive: true });
+    window.addEventListener(event, throttle(updateVH, 200), { passive: true });
 });
 
 updateVH();
 
 // Динамический адаптив
 /* new driveAdaptive({
-	type: 'max',
-	className: 'moved',
-	aliases: {
-		xxxs: 360,
-		xxs: 480,
-		xs: 640,
-		sm: 780,
-		md: 960,
-		lg: 1100,
-		xlg: 1280,
-		xxlg: 1440,
-		xxxlg: 1680,
-		xxxxlg: 1920
-	}
+    type: 'max',
+    className: 'moved',
+    aliases: {
+        xxxs: 360,
+        xxs: 480,
+        xs: 640,
+        sm: 780,
+        md: 960,
+        lg: 1100,
+        xlg: 1280,
+        xxlg: 1440,
+        xxxlg: 1680,
+        xxxxlg: 1920
+    }
 }); */
+
+const resizeElements = () => {
+    const items = document.querySelectorAll('[data-resize]');
+    let resizeTimer;
+
+    window.addEventListener('resize', () => {
+        items.forEach(item => {
+            item.classList.add('resize');
+        });
+
+        clearTimeout(resizeTimer);
+
+        resizeTimer = setTimeout(() => {
+            items.forEach(item => {
+                item.classList.remove('resize');
+            });
+        }, 150);
+    });
+}
+
+resizeElements();

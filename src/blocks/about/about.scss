@@ -1,0 +1,70 @@
+@use 'lib' as *;
+
+.about {
+	$self: &;
+
+	&__container {
+        display: grid;
+        grid-template-columns: 1fr minmax(auto, 448px);
+        gap: 50px;
+
+        @include media("<=xlg") {
+            grid-template-columns: 1fr;
+        }
+	}
+
+	&__cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: fluid(60px, 20px) fluid(40px, 20px);
+
+        @include media("<=xs") {
+            grid-template-columns: 100%;
+        }
+	}
+
+	&__card {
+        max-width: 540px;
+	}
+
+	&__card-title {
+        margin-bottom: 10px;
+        font-size: fluid(26px, 20px);
+        font-weight: 600;
+	}
+
+	&__card-text {
+        
+	}
+
+	&__img {
+        @include media("<=xlg") {
+            order: -1;
+        }
+	}
+
+    &__card:nth-child(3n+1){
+        b {
+            background: var(--green-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }  
+
+    &__card:nth-child(3n+2) {
+        b {
+            background: var(--blue-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    } 
+
+    &__card:nth-child(3n+3) {
+        b {
+            background: var(--yellow-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }  
+
+}

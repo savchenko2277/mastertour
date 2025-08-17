@@ -1,0 +1,36 @@
+@use 'lib' as *;
+
+.top {
+	$self: &;
+    padding-top: 120px;
+
+    .tourvisor {
+        width: 100%; height: 150px;
+        background: var(--blue-gradient);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+	&__container {
+        position: relative;
+        height: calc(100vh - 120px - 24px);
+        max-height: 900px;
+        min-height: fit-content;
+        border-radius: 8px;
+        overflow: hidden;
+        padding: fluid(40px, 10px);
+	}
+
+	&__bg {
+        position: absolute;
+        inset: 0;
+        width: 100%; height: 100%;
+        z-index: -1;
+
+        img {
+            object-fit: cover;
+            width: 100%; height: 100%;
+        }
+	}
+
+}

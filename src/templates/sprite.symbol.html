@@ -112,6 +112,7 @@ They might well be outsourced to an external stylesheet of course.
  .svg-map-dims { width: 24px; height: 24px; }
  .svg-row-vertical-dims { width: 24px; height: 24px; }
  .svg-search-normal-dims { width: 24px; height: 24px; }
+ .svg-star-dims { width: 20px; height: 20px; }
  .svg-user-dims { width: 24px; height: 24px; }
 </style>
 
@@ -141,6 +142,7 @@ for further details on how to create this embeddable sprite variant.
      <symbol viewBox="0 0 24 24" id="map" xmlns="http://www.w3.org/2000/svg"><path d="M12 13.43a3.12 3.12 0 1 0 0-6.24 3.12 3.12 0 0 0 0 6.24Z" stroke-width="1.5"/><path d="M3.62 8.49c1.97-8.66 14.8-8.65 16.76.01 1.15 5.08-2.01 9.38-4.78 12.04a5.193 5.193 0 0 1-7.21 0c-2.76-2.66-5.92-6.97-4.77-12.05Z" stroke-width="1.5"/></symbol>
      <symbol viewBox="0 0 24 24" id="row-vertical" xmlns="http://www.w3.org/2000/svg"><path d="M19.9 13.5H4.1c-1.5 0-2.1.64-2.1 2.23v4.04C2 21.36 2.6 22 4.1 22h15.8c1.5 0 2.1-.64 2.1-2.23v-4.04c0-1.59-.6-2.23-2.1-2.23ZM19.9 2H4.1C2.6 2 2 2.64 2 4.23v4.04c0 1.59.6 2.23 2.1 2.23h15.8c1.5 0 2.1-.64 2.1-2.23V4.23C22 2.64 21.4 2 19.9 2Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
      <symbol viewBox="0 0 24 24" id="search-normal" xmlns="http://www.w3.org/2000/svg"><path d="M11 20a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM18.93 20.69c.53 1.6 1.74 1.76 2.67.36.85-1.28.29-2.33-1.25-2.33-1.14-.01-1.78.88-1.42 1.97Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+     <symbol viewBox="0 0 20 20" id="star" xmlns="http://www.w3.org/2000/svg"><path d="m11.442 2.925 1.466 2.933c.2.409.734.8 1.184.875l2.658.442c1.7.283 2.1 1.517.875 2.733l-2.067 2.067c-.35.35-.541 1.025-.433 1.508l.592 2.559c.466 2.025-.609 2.808-2.4 1.75l-2.492-1.475c-.45-.267-1.192-.267-1.65 0l-2.492 1.475c-1.783 1.058-2.866.266-2.4-1.75l.592-2.559c.108-.483-.083-1.158-.433-1.508L2.375 9.908c-1.217-1.216-.825-2.45.875-2.733l2.658-.442c.442-.075.975-.466 1.175-.875L8.55 2.925c.8-1.592 2.1-1.592 2.892 0Z"/></symbol>
      <symbol viewBox="0 0 24 24" id="user" xmlns="http://www.w3.org/2000/svg"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10ZM20.59 22c0-3.87-3.85-7-8.59-7s-8.59 3.13-8.59 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
 
@@ -223,6 +225,14 @@ embedded above. They may be styled via CSS.
                         </svg>
                     </div>
                     <h2>search-normal, </h2>
+                </li>
+             <li title="star">
+                    <div class="icon-box">
+                        <svg class="svg-star-dims">
+                            <use xlink:href="#star"></use>
+                        </svg>
+                    </div>
+                    <h2>star, </h2>
                 </li>
              <li title="user">
                     <div class="icon-box">
@@ -307,6 +317,14 @@ SVG sprite. They may be styled via CSS.
                     </div>
                     <h2>search-normal</h2>
                 </li>
+             <li title="star">
+                    <div class="icon-box">
+                        <svg class="svg-star-dims">
+                            <use xlink:href="_sprite.svg#star"></use>
+                        </svg>
+                    </div>
+                    <h2>star</h2>
+                </li>
              <li title="user">
                     <div class="icon-box">
                         <svg class="svg-user-dims">
@@ -323,7 +341,7 @@ SVG sprite. They may be styled via CSS.
 
         </section>
         <footer>
-            <p>Generated at Thu, 14 Aug 2025 13:03:45 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+            <p>Generated at Sun, 17 Aug 2025 11:58:46 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
         </footer>
     </body>
 </html>

@@ -1,0 +1,65 @@
+@use 'lib' as *;
+
+.hot-tours {
+	$self: &;
+
+	&__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include media("<=xs") {
+            align-items: start;
+        }
+	}
+
+	&__title {
+        margin-bottom: 50px;
+	}
+
+	&__cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: fluid(30px, 10px);
+
+        @include media("<=lg") {
+            grid-template-columns: repeat(2, 1fr);
+        }
+	}
+
+    &__card {
+        min-height: 400px;
+
+        @include media("<=xs") {
+            grid-column: span 2;
+        }
+    }
+
+    &__card:nth-child(1) {
+        grid-row: span 2;
+        grid-column: span 2;
+    }
+
+    &__card:nth-child(4) {
+        grid-column: span 2;
+    }
+
+    &__card:nth-child(2), &__card:nth-child(3) {
+        padding: fluid(30px, 32px) fluid(30px, 10px);
+
+        .card-ht__text {
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .card-ht__price {
+            font-size: fluid(18px, 16px);
+        }
+
+        .card-ht__btn {
+            padding: 12px 20px;
+            font-size: 16px;
+        }
+    }
+
+}

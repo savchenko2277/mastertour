@@ -31,3 +31,8 @@
 p {
     margin-bottom: fluid(18px, 14px);
 }
+
+.btn[disabled] {
+    pointer-events: none;
+    opacity: 0.5;
+}

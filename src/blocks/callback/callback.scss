@@ -1,0 +1,132 @@
+@use 'lib' as *;
+
+.callback {
+    $self: &;
+
+    color: var(--white);
+
+    &__container.container {
+        background: var(--green-gradient);
+        padding: fluid(60px, 30px) 0;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+
+        @include media("<=xs") {
+            padding: fluid(60px, 30px) 0;
+        }
+
+        @include media(">xs") {
+            width: 100%;
+            margin: 0;
+        }
+    }
+
+    &__body.container {
+        position: relative;
+        z-index: 1;
+
+        @include media("<=xs") {
+            width: calc(100% - 20px);
+        }
+    }
+
+    &__title {
+        margin-bottom: 5px;
+        line-height: 170%;
+
+        @include media("<=xs") {
+            line-height: 130%;
+        }
+    }
+
+    &__desc {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #F5F4F0;
+        font-size: fluid(16px, 14px);
+
+        @include media("<=xs") {
+            line-height: 170%;
+        }
+    }
+
+    &__form {
+        --gap: 62px;
+
+        display: flex;
+        flex-direction: row;
+        gap: var(--gap);
+
+        @include media("<=lg") {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            --gap: 32px;
+        }
+
+        @include media("<=xs") {
+            grid-template-columns: 1fr;
+            --gap: 10px;
+        }
+
+    }
+
+    &__item {
+        flex: 1 1 auto;
+        position: relative;
+    }
+
+    &__item:not(:last-child) {
+        &::after {
+            @include media(">xs") {
+                content: '';
+                position: absolute;
+                width: 0px;
+                height: 40px;
+                background-color: var(--white);
+                top: 50%;
+                left: calc(100% + (var(--gap) / 2));
+                transform: translateY(-50%);
+                border-left: 1px solid var(--white);
+                border-right: 1px solid var(--white);
+            }
+        }
+    }
+
+    &__label {
+        input {
+            padding: 20px;
+            width: 100%;
+            border-radius: 8px;
+            outline: none;
+            stroke: none;
+            border: none;
+            font-size: 16px;
+        }
+    }
+
+    &__button {
+        padding: 20px 40px;
+        border-radius: 8px;
+        background-color: var(--text);
+        font-size: 16px;
+        font-weight: 400;
+
+        @include media(">lg") {
+            max-width: 227px;
+        }
+    }
+
+    &__decor {
+        position: absolute;
+        width: 276px;
+        top: -130px;
+        right: -70px;
+        z-index: 0;
+
+        @include media("<=xs") {
+            display: none;
+        }
+    }
+
+}

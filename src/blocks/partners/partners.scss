@@ -1,0 +1,58 @@
+@use 'lib' as *;
+
+.partners {
+    $self: &;
+
+    &__container {
+        background: var(--yellow-gradient);
+        padding: 120px 0;
+    }
+
+    &__running-line.container {
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+
+        @include media("<=xs") {
+            width: 100%;
+            margin: 0;
+        }
+    }
+
+    &__scroll {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+        animation: scroll 15s linear infinite;
+        padding-right: 30px;
+
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+    }
+
+    &__scroll-item {
+        width: 280px;
+        height: 120px;
+        background-color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+
+        img {
+            max-height: 80px;
+            max-width: 90%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+}

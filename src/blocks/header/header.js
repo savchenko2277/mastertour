@@ -9,4 +9,8 @@
         headerBurger.classList.toggle('active');
     });
 
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('is-scroll', window.scrollY > 0);
+    });
+
 })();
