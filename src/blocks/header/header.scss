@@ -14,9 +14,14 @@
     }
 
     &.is-scroll &__container {
-        padding-bottom: 10px;
+        padding-bottom: 0px;
+
         &::after {
             opacity: 0;
+        }
+
+        @include media("<=xxlg") {
+            padding-bottom: 10px;
         }
     }
 
