@@ -1,0 +1,30 @@
+@use 'lib' as *;
+
+.colorful-card {
+	$self: &;
+
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &_link {
+        gap: 10px;
+    }
+
+    &_link &__text {
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--white);
+    }
+
+	&__text {
+        line-height: 170%;
+        font-size: fluid(24px, 18px);
+        font-weight: 700;
+	}
+
+}

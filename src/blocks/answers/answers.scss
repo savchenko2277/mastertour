@@ -1,0 +1,22 @@
+@use 'lib' as *;
+
+.answers {
+	$self: &;
+
+	&__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+	}
+
+	&__title {
+        margin-bottom: fluid(50px, 30px);
+	}
+
+	&__items {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+	}
+
+}

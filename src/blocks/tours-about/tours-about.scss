@@ -1,0 +1,30 @@
+@use 'lib' as *;
+
+.tours-about {
+	$self: &;
+
+	&__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+	}
+
+	&__title {
+        margin-bottom: 10px;
+	}
+
+	&__text {
+        display: flex;
+        flex-direction: column;
+        line-height: 170%;
+        gap: 24px;
+        font-size: fluid(18px, 14px);
+
+        b {
+            color: var(--yellow);
+        }
+	}
+
+}

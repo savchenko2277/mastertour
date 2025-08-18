@@ -1,0 +1,41 @@
+@use 'lib' as *;
+
+.about-visa {
+	$self: &;
+
+	&__container {
+
+	}
+
+	&__title {
+        margin-bottom: 10px;
+	}
+
+	&__content {
+        line-height: 170%;
+        margin-bottom: 30px;
+        font-size: fluid(18px, 16px);
+
+        p {
+            
+        }
+
+        h4 {
+            margin-top: 5px;
+            font-size: fluid(24px, 16px);
+            font-weight: 700;
+            background: var(--green-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        ul li {
+            list-style: disc;
+        }
+
+        ul {
+            padding-left: 24px;
+        }
+	}
+
+}

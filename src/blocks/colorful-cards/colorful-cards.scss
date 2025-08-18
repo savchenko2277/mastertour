@@ -1,0 +1,29 @@
+@use 'lib' as *;
+
+.colorful-cards {
+	$self: &;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    .colorful-card:nth-child(3n+1) {
+        background: var(--blue-gradient);
+    }
+
+    .colorful-card:nth-child(3n+2) {
+        background: var(--green-gradient);
+    }
+
+    .colorful-card:nth-child(3n+3) {
+        background: var(--yellow-gradient);
+    }
+
+    @include media("<=lg") {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media("<=xs") {
+        grid-template-columns: 100%;
+    }
+}

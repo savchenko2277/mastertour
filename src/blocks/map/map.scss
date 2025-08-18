@@ -1,0 +1,51 @@
+@use 'lib' as *;
+
+.map {
+    $self: &;
+
+    &__container {
+        display: grid;
+        grid-template-columns: minmax(auto, 1110px) minmax(540px, 1fr);
+        gap: 30px;
+
+        @include media("<=lg") {
+            grid-template-columns: 100%;
+        }
+    }
+
+    &__iframe {
+        aspect-ratio: 1110 / 675;
+        height: fit-content;
+    }
+
+    &__side {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        justify-content: space-between;
+    }
+
+    &__item {
+        line-height: 170%;
+    }
+
+    &__item-title {
+        font-weight: 700;
+    }
+
+    &__item-text-text {
+        a {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+            align-items: center;
+
+            img {
+                width: 30px;
+                height: 30px;
+                flex: 0 0 auto;
+            }
+        }
+    }
+
+}

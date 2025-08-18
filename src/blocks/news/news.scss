@@ -5,6 +5,11 @@
 
     position: relative;
 
+    &_without-button &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
 	&__container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);

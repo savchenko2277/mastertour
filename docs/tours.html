@@ -4,7 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="style.css?v=1755456330914">
+    <link rel="stylesheet" href="style.css?v=1755541654011">
+    <script src="https://api-maps.yandex.ru/v3/?apikey=YOUR_API_KEY&lang=en_US"></script>
+    <script>
+        initMap();
+
+        async function initMap() {
+            await ymaps3.ready;
+
+            const {YMap, YMapDefaultSchemeLayer} = ymaps3;
+
+            const map = new YMap(
+                document.getElementById('map'),
+                {
+                    location: {
+                        center: [37.588144, 55.733842],
+                        zoom: 10
+                    }
+                }
+            );
+
+            map.addChild(new YMapDefaultSchemeLayer());
+        }
+    </script>
     <title></title>
 </head>
 <body id="home">
@@ -66,6 +88,50 @@
     </div>
 </section>
 
+<section class="callback section-p">
+    <div class="callback__container container">
+        <div class="callback__body container">
+            <h2 class="callback__title title title-36">Хотите отдых без хлопот? Мы&#160;всё организуем!</h2>
+            <p class="callback__desc">Подберём лучшие предложения и&#160;поможем с&#160;выбором&#160;&#8212; просто оставьте номер.</p>
+            <form class="callback__form">
+                <div class="callback__label callback__item">
+                    <input placeholder="Ваше имя" type="text" class="custom-input">
+                </div>
+                <div class="callback__label callback__item">
+                    <input placeholder="Ваш телефон" type="tel" class="custom-input">
+                </div>
+                <div class="callback__label callback__item">
+                    <input placeholder="Ваша почта" type="email" class="custom-input">
+                </div>
+                <button class="callback__button btn callback__item" type="button" aria-label="Отправить заявку">Отправить заявку</button>
+            </form>
+        </div>
+        <img src="./img/decor-1.webp" alt="" class="callback__decor">
+    </div>
+</section>
+
+<section class="tours-about section-p">
+    <div class="tours-about__container container">
+        <h2 class="tours-about__title title title-36">
+            🌴 Горящие туры&#160;&#8212; отпуск ближе, чем кажется!
+        </h2>
+        <div class="tours-about__text">
+            <p>
+                В&#160;&#171;МастерТур&#187; вы&#160;всегда найдёте только актуальные предложения от&#160;проверенных туроператоров. <br>
+                Мы&#160;собрали лучшие горящие путёвки&#160;&#8212; бронируйте онлайн в&#160;любое время или звоните: 📞 <b>+7&#160;(843-56)&#160;7-20-20</b>
+            </p>
+            <p>
+                ⏱ Реализация тура занимает всего несколько дней, поэтому действовать нужно быстро. <br>
+                Готовы к&#160;спонтанному отдыху? Тогда просто выбирайте курорт&#160;&#8212; мы&#160;поможем всё организовать!
+            </p>
+            <p>
+                Торопитесь: предложения обновляются каждый день, и&#160;лучшие разлетаются первыми. <br>
+                <b>Подберите тур мечты с&#160;&#171;МастерТур&#187;&#160;&#8212; отдых начинается здесь!</b>
+            </p>
+        </div>
+    </div>
+</section>
+
 <footer class="footer">
     <div class="footer__container container">
         <div class="footer__top">
@@ -110,6 +176,6 @@
 </footer>
 
 <svg class="sprite" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol viewBox="0 0 24 24" id="airplane" xmlns="http://www.w3.org/2000/svg"><path d="m9.03 21.69 2.33-1.96c.35-.3.93-.3 1.28 0l2.33 1.96c.54.27 1.2 0 1.4-.58l.44-1.33c.11-.32 0-.79-.24-1.03l-2.27-2.28c-.17-.16-.3-.48-.3-.71v-2.85c0-.42.31-.62.7-.46l4.91 2.12c.77.33 1.4-.08 1.4-.92v-1.29c0-.67-.5-1.44-1.12-1.7L14.3 8.25a.554.554 0 0 1-.3-.46v-3c0-.94-.69-2.05-1.53-2.48-.3-.15-.65-.15-.95 0-.84.43-1.53 1.55-1.53 2.49v3c0 .18-.14.39-.3.46l-5.58 2.41c-.62.25-1.12 1.02-1.12 1.69v1.29c0 .84.63 1.25 1.4.92l4.91-2.12c.38-.17.7.04.7.46v2.85c0 .23-.13.55-.29.71l-2.27 2.28c-.24.24-.35.7-.24 1.03l.44 1.33c.18.58.84.86 1.39.58Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol viewBox="0 0 24 24" id="calendar" xmlns="http://www.w3.org/2000/svg"><path d="M8 2v3M16 2v3M3.5 9.09h17M21 8.5V17c0 3-1.5 5-5 5H8c-3.5 0-5-2-5-5V8.5c0-3 1.5-5 5-5h8c3.5 0 5 2 5 5Z" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.695 13.7h.009M15.695 16.7h.009M11.995 13.7h.01M11.995 16.7h.01M8.294 13.7h.01M8.294 16.7h.01" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol viewBox="0 0 24 24" id="elements" xmlns="http://www.w3.org/2000/svg"><path d="M22 8.52V3.98C22 2.57 21.36 2 19.77 2h-4.04c-1.59 0-2.23.57-2.23 1.98v4.53c0 1.42.64 1.98 2.23 1.98h4.04c1.59.01 2.23-.56 2.23-1.97ZM22 19.77v-4.04c0-1.59-.64-2.23-2.23-2.23h-4.04c-1.59 0-2.23.64-2.23 2.23v4.04c0 1.59.64 2.23 2.23 2.23h4.04c1.59 0 2.23-.64 2.23-2.23ZM10.5 8.52V3.98C10.5 2.57 9.86 2 8.27 2H4.23C2.64 2 2 2.57 2 3.98v4.53c0 1.42.64 1.98 2.23 1.98h4.04c1.59.01 2.23-.56 2.23-1.97ZM10.5 19.77v-4.04c0-1.59-.64-2.23-2.23-2.23H4.23c-1.59 0-2.23.64-2.23 2.23v4.04C2 21.36 2.64 22 4.23 22h4.04c1.59 0 2.23-.64 2.23-2.23Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol viewBox="0 0 24 24" id="global" xmlns="http://www.w3.org/2000/svg"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 3h1a28.424 28.424 0 0 0 0 18H8M15 3a28.424 28.424 0 0 1 0 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 16v-1a28.424 28.424 0 0 0 18 0v1M3 9a28.424 28.424 0 0 1 18 0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol viewBox="0 0 24 24" id="map" xmlns="http://www.w3.org/2000/svg"><path d="M12 13.43a3.12 3.12 0 1 0 0-6.24 3.12 3.12 0 0 0 0 6.24Z" stroke-width="1.5"/><path d="M3.62 8.49c1.97-8.66 14.8-8.65 16.76.01 1.15 5.08-2.01 9.38-4.78 12.04a5.193 5.193 0 0 1-7.21 0c-2.76-2.66-5.92-6.97-4.77-12.05Z" stroke-width="1.5"/></symbol><symbol viewBox="0 0 24 24" id="row-vertical" xmlns="http://www.w3.org/2000/svg"><path d="M19.9 13.5H4.1c-1.5 0-2.1.64-2.1 2.23v4.04C2 21.36 2.6 22 4.1 22h15.8c1.5 0 2.1-.64 2.1-2.23v-4.04c0-1.59-.6-2.23-2.1-2.23ZM19.9 2H4.1C2.6 2 2 2.64 2 4.23v4.04c0 1.59.6 2.23 2.1 2.23h15.8c1.5 0 2.1-.64 2.1-2.23V4.23C22 2.64 21.4 2 19.9 2Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol viewBox="0 0 24 24" id="search-normal" xmlns="http://www.w3.org/2000/svg"><path d="M11 20a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM18.93 20.69c.53 1.6 1.74 1.76 2.67.36.85-1.28.29-2.33-1.25-2.33-1.14-.01-1.78.88-1.42 1.97Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol viewBox="0 0 20 20" id="star" xmlns="http://www.w3.org/2000/svg"><path d="m11.442 2.925 1.466 2.933c.2.409.734.8 1.184.875l2.658.442c1.7.283 2.1 1.517.875 2.733l-2.067 2.067c-.35.35-.541 1.025-.433 1.508l.592 2.559c.466 2.025-.609 2.808-2.4 1.75l-2.492-1.475c-.45-.267-1.192-.267-1.65 0l-2.492 1.475c-1.783 1.058-2.866.266-2.4-1.75l.592-2.559c.108-.483-.083-1.158-.433-1.508L2.375 9.908c-1.217-1.216-.825-2.45.875-2.733l2.658-.442c.442-.075.975-.466 1.175-.875L8.55 2.925c.8-1.592 2.1-1.592 2.892 0Z"/></symbol><symbol viewBox="0 0 24 24" id="user" xmlns="http://www.w3.org/2000/svg"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10ZM20.59 22c0-3.87-3.85-7-8.59-7s-8.59 3.13-8.59 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol></svg>
-<script src="common.js?v=1755456330914"></script>
+<script src="common.js?v=1755541654011"></script>
 </body>
 </html>
