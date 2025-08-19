@@ -10,43 +10,13 @@
     </div>
 </section>
 
-<!-- <section class="destinations section-p">
+<section class="destinations section-p">
     <div class="destinations__container container">
         <h2 class="destinations__title title title-36">
             Популярные направления
         </h2>
-        <div class="destinations__tabs-container">
-            <div class="destinations__navigation">
-                <button class="destinations__navigation-button" type="button" aria-label="Выбрать направление">Турция</button>
-                <button class="destinations__navigation-button" type="button" aria-label="Выбрать направление">Египет</button>
-                <button class="destinations__navigation-button" type="button" aria-label="Выбрать направление">Мальдивы</button>
-                <button class="destinations__navigation-button" type="button" aria-label="Выбрать направление">Тайланд</button>
-                <button class="destinations__navigation-button" type="button" aria-label="Выбрать направление">Вьетнам</button>
-                <button class="destinations__navigation-button" type="button" aria-label="Выбрать направление">Россия</button>
-                <button class="destinations__navigation-button" type="button" aria-label="Выбрать направление">Эмираты</button>
-                <button class="destinations__navigation-button" type="button" aria-label="Выбрать направление">Индонезия</button>
-                <button class="destinations__navigation-button" type="button" aria-label="Выбрать направление">Паттая</button>
-                <button class="destinations__navigation-button" type="button" aria-label="Выбрать направление">Шри Ланка</button>
-            </div>
-            <div class="destinations__tabs">
-                <div class="destinations__tab">
-                    <div class="destinations__tab-swiper swiper">
-                        <div class="swiper-wrapper">
-                            @@include("_card-destinations.html", {
-                                "cardCls": "destinations__card swiper-slide",
-                                "cardImage": "./img/destinations/1.webp",
-                                "cardLocation": "Турция, Анталия(Antalya)",
-                                "cardTitle": "Rixos Downtown Antalya",
-                                "cardDesc": "отличные пляжи, развлечения, активная жизнь",
-                                "cardPrice": "от 65 000 ₽/чел",
-                            })
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-</section> -->
+</section>
 
 <section class="hot-tours section-p">
     <div class="hot-tours__container container">
@@ -199,12 +169,18 @@
     </div>
 </section>
 
+<section class="reviews">
+    <div class="reviews__container container">
+        <h2 class="reviews__title title title-36">Отзывы</h2>
+    </div>
+</section>
+
 @@include("_callback.html", { blockCls: "section-p" })
 
 <section data-news-js class="news section-p">
     <div class="news__container container">
         <h2 class="news__title title title-36">Новости ”МастерТур”</h2>
-        <a href="#" class="news__button btn">Все новости</a>
+        <a href="#" class="news__button btn btn-blue"><span>Все новости</span></a>
         <div class="news__items swiper">
             <div class="swiper-wrapper">
                 <a href="#" class="news__item swiper-slide">

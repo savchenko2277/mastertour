@@ -69,6 +69,7 @@
 		"suffix": "$self: &;"
 	},
 	"dependencies": {
+		"scroll-lock": "^2.1.5",
 		"swiper": "^11.2.10"
 	}
 }

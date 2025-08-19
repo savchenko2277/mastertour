@@ -19,6 +19,10 @@
         }
     }
 
+    &__running-line:hover &__scroll {
+        animation-play-state: paused;
+    }
+
     &__scroll {
         display: flex;
         flex-direction: row;

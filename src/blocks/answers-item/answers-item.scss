@@ -6,7 +6,6 @@
     display: grid;
     grid-template-rows: max-content 0fr;
     transition: grid-template-rows var(--trans);
-    padding: 10px 10px 45px 10px;
     border-bottom: 1px solid var(--text);
 
     &.active {
@@ -17,8 +16,12 @@
         transform: rotate(-45deg);
     }
 
-    &.active &__title {
+    &.active &__text {
         margin-bottom: 24px;
+    }
+
+    &.active &__title {
+        padding: 10px 10px 24px 10px;
     }
 
 	&__title {
@@ -29,7 +32,8 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        transition: margin-bottom var(--trans);
+        transition: margin-bottom var(--trans), padding var(--trans);
+        padding: 10px 10px 45px 10px;
         gap: 48px;
 
         &::after {
@@ -46,6 +50,10 @@
 	&__text {
         overflow: hidden;
         font-size: fluid(18px, 14px);
+        padding: 0 10px;
+        line-height: 170%;
+        margin-bottom: 0px;
+        transition: margin-bottom var(--trans);
 	}
 
     @include media("<=xs") {

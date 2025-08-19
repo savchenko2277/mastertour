@@ -1,5 +1,7 @@
 (() => {
 
+    if(!document.querySelector('.map__iframe')) return;
+
     initMap();
 
     async function initMap() {

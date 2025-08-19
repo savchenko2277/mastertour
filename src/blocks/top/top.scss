@@ -43,7 +43,7 @@
 
     &__container {
         position: relative;
-        height: calc(100vh - 120px - 24px);
+        height: calc(var(--vh) * 100 - (120px + 24px));
         max-height: 900px;
         min-height: fit-content;
         border-radius: 8px;
@@ -92,7 +92,7 @@
     &__up &__nav {
         margin-bottom: 0;
         text-wrap: nowrap;
-        overflow: scroll;
+        overflow-x: auto;
     }
 
     &__up {

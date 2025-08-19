@@ -1,3 +1,5 @@
+import scrollLock from 'scroll-lock';
+
 (() => {
 
     const header = document.querySelector('.header');
@@ -7,6 +9,12 @@
     headerBurger.addEventListener('click', () => {
         headerMenu.classList.toggle('active');
         headerBurger.classList.toggle('active');
+
+        if(headerMenu.classList.contains('active')) {
+            scrollLock.disablePageScroll();
+        } else {
+            scrollLock.enablePageScroll();
+        }
     });
 
     window.addEventListener('scroll', () => {

@@ -11,6 +11,7 @@
     cursor: pointer;
     position: relative;
     flex: 0 0 auto;
+    pointer-events: all;
 
     &:disabled, &.swiper-button-lock {
         opacity: 0.5;
@@ -62,4 +63,35 @@
     z-index: 1;
     width: 100%;
     padding: 0 50px;
+    pointer-events: none;
+}
+
+.btn-blue {
+    background: var(--blue-gradient);
+    transition: background var(--trans);
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(270deg, #1E77BB 0%, #2FA5DE 97%);
+        transition: opacity var(--trans);
+        z-index: 0;
+        opacity: 0;
+    }
+
+    span {
+        position: relative;
+        z-index: 1;
+    }
+
+    &:hover::after {
+        opacity: 1;
+    }
+
+    &:hover {
+        
+    }
 }

@@ -6,27 +6,6 @@
 	<link rel="shortcut icon" href="images/favicon.ico"> 
 	<link rel="stylesheet" href="style.css?v=0"> 
     <script src="https://api-maps.yandex.ru/v3/?apikey=YOUR_API_KEY&lang=en_US"></script>
-    <script>
-        initMap();
-
-        async function initMap() {
-            await ymaps3.ready;
-
-            const {YMap, YMapDefaultSchemeLayer} = ymaps3;
-
-            const map = new YMap(
-                document.getElementById('map'),
-                {
-                    location: {
-                        center: [37.588144, 55.733842],
-                        zoom: 10
-                    }
-                }
-            );
-
-            map.addChild(new YMapDefaultSchemeLayer());
-        }
-    </script>
 	<title></title> 
 </head> 
 <body @@if(this.id){id="@@id"}>
