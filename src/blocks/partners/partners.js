@@ -3,14 +3,12 @@
         constructor(container, options) {
             this.container = container;
             this.options = options || {};
-
-            // значение атрибута = секунды на полный проход
+            
             const duration = parseFloat(this.options.speed || container.dataset.speed) || 15;
 
             this.scrolls = [...container.querySelectorAll('.partners__scroll')];
             this.scrollWidth = this.scrolls[0].scrollWidth;
 
-            // скорость в px/s
             this.speed = this.scrollWidth / duration;
 
             this.position = 0;
@@ -30,7 +28,7 @@
         slowDown() {
             this.stopAccel();
             this.accel = setInterval(() => {
-                this.currentSpeed = Math.max(0, this.currentSpeed - this.speed * 0.05); // плавное торможение
+                this.currentSpeed = Math.max(0, this.currentSpeed - this.speed * 0.05);
                 if (this.currentSpeed <= 0) {
                     this.currentSpeed = 0;
                     this.stopAccel();
@@ -58,7 +56,7 @@
 
         animate() {
             const now = performance.now();
-            const delta = (now - this.lastTime) / 1000; // секунды
+            const delta = (now - this.lastTime) / 1000;
             this.lastTime = now;
 
             this.position -= this.currentSpeed * delta;
