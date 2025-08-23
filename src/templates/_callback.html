@@ -3,17 +3,17 @@
         <div class="callback__body container">
             <h2 class="callback__title title title-36">Хотите отдых без хлопот? Мы всё организуем!</h2>
             <p class="callback__desc">Подберём лучшие предложения и поможем с выбором — просто оставьте номер.</p>
-            <form class="callback__form">
+            <form action="#" autocomplete="off" id="form-callback" class="callback__form">
                 <div class="callback__label callback__item">
-                    <input placeholder="Ваше имя" type="text" class="custom-input">
+                    <input name="name" placeholder="Ваше имя" type="text" autocomplete="off" class="custom-input">
                 </div>
                 <div class="callback__label callback__item">
-                    <input placeholder="Ваш телефон" type="tel" class="custom-input">
+                    <input name="tel" placeholder="Ваш телефон" type="tel" class="custom-input">
                 </div>
                 <div class="callback__label callback__item">
-                    <input placeholder="Ваша почта" type="email" class="custom-input">
+                    <input name="email" placeholder="Ваша почта" type="email" class="custom-input">
                 </div>
-                <button class="callback__button btn callback__item" type="button" aria-label="Отправить заявку">Отправить заявку</button>
+                <button class="callback__button btn callback__item" type="submit" aria-label="Отправить заявку">Отправить заявку</button>
             </form>
         </div>
         <img src="./img/decor-1.webp" alt="" class="callback__decor">

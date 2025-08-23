@@ -71,6 +71,8 @@
     transition: background var(--trans);
     position: relative;
     overflow: hidden;
+    border-radius: 8px;
+    color: #fff;
 
     &::after {
         content: '';
@@ -94,4 +96,8 @@
     &:hover {
         
     }
+}
+
+.validate-error {
+    
 }

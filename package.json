@@ -69,6 +69,8 @@
 		"suffix": "$self: &;"
 	},
 	"dependencies": {
+		"inputmask": "^5.0.9",
+		"just-validate": "^4.3.0",
 		"scroll-lock": "^2.1.5",
 		"swiper": "^11.2.10"
 	}

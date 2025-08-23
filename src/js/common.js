@@ -1,4 +1,6 @@
 import { throttle } from "./libs/utils";
+import JustValidate from 'just-validate';
+import Inputmask from "inputmask";
 // import { driveAdaptive } from "./libs/driveAdaptive.js";
 import "./polyfills.js";
 import "./blocks.js";
@@ -59,3 +61,32 @@ const resizeElements = () => {
 }
 
 resizeElements();
+
+const validation = new JustValidate('#form-callback');
+
+validation
+  .addField('[name="tel"]', [
+    {
+      rule: 'required',
+      errorMessage: '#',
+    },
+    {
+      rule: 'minLength',
+      value: 18,
+    },
+    {
+      rule: 'maxLength',
+      value: 30,
+      errorMessage: '#',
+    },
+]);
+
+document.querySelectorAll("input[type='tel']").forEach(input => {
+    Inputmask({
+        mask: "+7 (999) 999-99-99",
+        showMaskOnHover: false,
+        showMaskOnFocus: true,
+        clearIncomplete: true,
+        jitMasking: true
+    }).mask(input);
+});

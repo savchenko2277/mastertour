@@ -1,0 +1,114 @@
+@use 'lib' as *;
+
+.header-item-menu {
+    $self: &;
+
+    padding: 20px 50px;
+    position: absolute;
+    width: 100%;
+    background-color: #F5F4F0;
+    top: 52px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 2px #1E77BB;
+
+    &__top {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: start;
+        gap: 16px 60px;
+        font-size: 18px;
+        font-weight: 400;
+
+        a {
+            position: relative;
+            padding-bottom: 10px;
+            line-height: 100%;
+            transition: color var(--trans);
+            color: var(--text-gray);
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background: linear-gradient(270deg, #2FA5DE 0%, #1E77BB 97%);
+                opacity: 0;
+                transition: opacity var(--trans);
+            }
+
+            &:hover::after,
+            &.active::after {
+                opacity: 1;
+            }
+
+            &:hover,
+            &.active {
+                color: #1E77BB;
+            }
+        }
+    }
+
+    &__btn {}
+
+    &__tabs {}
+
+    &__tab.active {
+        display: flex;
+    }
+
+    &__tab {
+        display: none;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        gap: 30px;
+
+        a {
+            padding: 10px;
+            position: relative;
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--text-gray);
+        }
+
+        a.btn-blue {
+            color: #fff;
+        }
+
+        a:not(.btn-blue) {
+            &::after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background: linear-gradient(270deg, #2FA5DE 0%, #1E77BB 97%);
+                opacity: 0;
+                transition: opacity var(--trans);
+            }
+
+            &:hover::after {
+                opacity: 1;
+            }
+
+            &:hover {
+                color: #1E77BB;
+            }
+        }
+    }
+
+    &__link {
+
+        &_blue {}
+    }
+
+}

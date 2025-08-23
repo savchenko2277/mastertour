@@ -64,15 +64,27 @@
         color: var(--blue);
     }
 
+    &__item:hover &__item-image img {
+        transform: scale(1.05);
+    }
+
 	&__item-image {
         aspect-ratio: 357 / 240;
         border-radius: 8px;
         object-fit: cover;
         width: 100%;
+        overflow: hidden;
+
+        img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform var(--trans);
+        }
 
         @include media("<=xs") {
             aspect-ratio: 305 / 240;
         }
+
 	}
 
 	&__item-date {
