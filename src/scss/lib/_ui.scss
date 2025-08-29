@@ -13,7 +13,8 @@
     flex: 0 0 auto;
     pointer-events: all;
 
-    &:disabled, &.swiper-button-lock {
+    &:disabled,
+    &.swiper-button-lock {
         opacity: 0.5;
         pointer-events: none;
     }
@@ -66,6 +67,35 @@
     pointer-events: none;
 }
 
+.btn-border {
+    position: relative;
+    border-radius: 8px;
+
+    span {
+        font-weight: 600;
+        background: linear-gradient(270deg, #2FA5DE 0%, #1E77BB 97%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 2px;
+        background: linear-gradient(270deg, #2FA5DE 0%, #1E77BB 97%);
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        z-index: -1;
+    }
+}
+
 .btn-blue {
     background: var(--blue-gradient);
     transition: background var(--trans);
@@ -93,11 +123,7 @@
         opacity: 1;
     }
 
-    &:hover {
-        
-    }
+    &:hover {}
 }
 
-.validate-error {
-    
-}
+.validate-error {}

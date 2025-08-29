@@ -1,0 +1,29 @@
+@@include("_head.html", {"id":"home"}) 
+@@include("_header.html") 
+
+<section class="error section-p">
+    <div class="error__container container">
+        <div class="error__content">
+            <b class="error__big-text">404</b>
+            <h1 class="error__title">Страница не найдена.</h1>
+            <p class="error__desc">
+                Но путешествие мы Вам найдём.
+            </p>
+            <div class="error__buttons">
+                <a href="#" class="error__btn btn btn-blue">
+                    <span>Горячие туры</span>
+                </a>
+                <a href="#" class="error__btn btn btn-border">
+                    <span>Вернуться на главную</span>
+                </a>
+            </div>
+        </div>
+        <div class="error__image">
+            <img class="error__image-main" loading="lazy" alt="image" src="./img/io.webp">
+            <img src="./img/mask.webp" loading="lazy" alt="image" class="error__image-mask">
+            <img loading="lazy" alt="image" src="./img/icons-images/eye.svg" class="error__image-eye">
+        </div>
+    </div>
+</section>
+
+@@include("_bottom.html") 
