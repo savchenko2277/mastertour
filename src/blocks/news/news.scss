@@ -44,9 +44,10 @@
         }
 	}
 
-	&__items {
+	&__items.swiper {
         grid-column: span 2;
         max-width: 100%;
+        width: 100%;
 
         @include media("<=xs") {
             order: 1;

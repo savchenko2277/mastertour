@@ -3,8 +3,6 @@
 .top {
     $self: &;
 
-    padding-top: 120px;
-
     &_pages &__container {
         max-height: 700px;
         display: flex;
@@ -13,32 +11,7 @@
     }
 
     &__nav {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 0px;
-        font-size: 16px;
-        margin-bottom: 20px;
-
-        li {
-            display: flex;
-            flex-direction: row;
-            color: rgba($color: #2E2E2E, $alpha: 0.3);
-        }
-
-        li:last-child {
-            color: rgba($color: #2E2E2E, $alpha: 1);
-        }
-
-        li:not(:last-child)::after {
-            content: "\25b6";
-            display: block;
-            margin: 0 10px;
-        }
-
-        li:nth-last-child(2)::after {
-            color: var(--text);
-        }
+       
     }
 
     &__container {

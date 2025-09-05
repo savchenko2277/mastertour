@@ -1,0 +1,40 @@
+.SLT-App-blue__container {
+    background: linear-gradient(270deg, #2FA5DE 0%, #1E77BB 97%);
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 100%;
+
+    .SLT-SearchForm-blue__container.SLT-SearchForm-blue__desktopView {
+        padding: 30px;
+    }
+
+    .SLT-SearchForm-blue__title {
+        display: none;
+    }
+
+    .SLT-SearchForm-blue__searchBtn {
+        background-color: #2E2E2E;
+        border-radius: 8px;
+        color: #fff;
+    }
+
+    .SLT-SearchForm-blue__mainBlock {
+        display: flex;
+        gap: 20px;
+    }
+
+    .SLT-SearchForm-blue__field {
+        border-radius: 8px;
+        background-color: #F5F4F0;
+        overflow: hidden;
+    }
+
+    .SLT-SearchForm-blue__field.SLT-SearchForm-blue__half:not(:last-child):after {
+        display: none;
+    }
+
+    .SLT-SearchForm-blue__extendFormButton .SLT-SearchForm-blue__collapseForm svg {
+        fill: #2E2E2E;
+    }
+
+}

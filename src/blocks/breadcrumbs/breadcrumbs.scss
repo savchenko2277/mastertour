@@ -1,0 +1,51 @@
+@use 'lib' as *;
+
+.breadcrumbs {
+    $self: &;
+
+    margin-bottom: 20px;
+
+    &_article {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+
+    &__date {
+        font-size: 16px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0px;
+        font-size: 16px;
+        overflow-x: auto;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: row;
+        color: rgba($color: #2E2E2E, $alpha: 0.3);
+        text-wrap: nowrap;
+
+        &:last-child {
+            color: rgba($color: #2E2E2E, $alpha: 1);
+        }
+
+        &:not(:last-child)::after {
+            content: "\25b6";
+            display: block;
+            margin: 0 10px;
+        }
+
+        &:nth-last-child(2)::after {
+            color: var(--text);
+        }
+    }
+
+}
