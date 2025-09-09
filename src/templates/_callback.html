@@ -1,19 +1,38 @@
 <section class="callback @@if(this.blockCls){@@blockCls}">
     <div class="callback__container container">
         <div class="callback__body container">
+            <p class="callback__end active">
+                Спасибо! Ваша заявка принята! <br> Наш менеджер свяжется с Вами в ближайшее время
+            </p>
             <h2 class="callback__title title title-36">Хотите отдых без хлопот? Мы всё организуем!</h2>
             <p class="callback__desc">Подберём лучшие предложения и поможем с выбором — просто оставьте номер.</p>
             <form action="#" autocomplete="off" id="form-callback" class="callback__form">
-                <div class="callback__label callback__item">
-                    <input name="name" placeholder="Ваше имя" type="text" autocomplete="off" class="custom-input">
+                <div class="callback__up">
+                    <div class="callback__label callback__item">
+                        <input name="name" placeholder="Ваше имя" type="text" autocomplete="off" class="custom-input">
+                    </div>
+                    <div class="callback__label callback__item">
+                        <input name="tel" placeholder="Ваш телефон" type="tel" class="custom-input">
+                    </div>
+                    <div class="callback__label callback__item">
+                        <input name="email" placeholder="Ваша почта" type="email" class="custom-input">
+                    </div>
+                    <button class="callback__button btn callback__item" type="submit"
+                        aria-label="Отправить заявку">Отправить заявку</button>
                 </div>
-                <div class="callback__label callback__item">
-                    <input name="tel" placeholder="Ваш телефон" type="tel" class="custom-input">
-                </div>
-                <div class="callback__label callback__item">
-                    <input name="email" placeholder="Ваша почта" type="email" class="custom-input">
-                </div>
-                <button class="callback__button btn callback__item" type="submit" aria-label="Отправить заявку">Отправить заявку</button>
+                <label class="callback__agree">
+                    <input type="checkbox" class="custom-checkbox">
+                    <p class="callback__agree-text">
+                        Я даю согласие на обработку моих персональных данных в соответствии с 
+                        <a href="">Политикой конфиденциальности.</a> <br> Согласие действует бессрочно и может быть отозвано путем подачи заявления.
+                    </p>
+                </label>
+                <label class="callback__agree">
+                    <input type="checkbox" class="custom-checkbox">
+                    <p class="callback__agree-text">
+                        Я даю согласие на получение рекламных и информационных рассылок от ООО «МастерТур»
+                    </p>
+                </label>
             </form>
         </div>
         <img src="./img/decor-1.webp" alt="" class="callback__decor">
