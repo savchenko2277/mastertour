@@ -1,10 +1,11 @@
 @use 'lib' as *;
 
 .header {
-	$self: &;
+    $self: &;
 
     position: fixed;
-    left: 0; top: 0;
+    left: 0;
+    top: 0;
     width: 100%;
     z-index: 100;
     background-color: var(--white);
@@ -25,7 +26,7 @@
         }
     }
 
-	&__container {
+    &__container {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -49,9 +50,9 @@
             background-color: #2E2E2E4D;
             transition: opacity var(--trans);
         }
-	}
+    }
 
-	&__logo {
+    &__logo {
         height: 70px;
         flex: 0 0 auto;
         position: relative;
@@ -64,21 +65,24 @@
         @include media("<=xs") {
             height: 60px;
         }
-	}
+    }
 
-	&__menu {
+    &__menu {
         &.resize {
             transition: none;
         }
+
         &.active {
             opacity: 1;
             pointer-events: all;
             visibility: visible;
         }
+
         @include media("<=xxlg") {
             position: fixed;
             inset: 0;
-            width: 100%; height: 100%;
+            width: 100%;
+            height: 100%;
             opacity: 0;
             pointer-events: none;
             visibility: hidden;
@@ -92,63 +96,99 @@
             flex-direction: column;
             gap: 24px;
         }
-	}
-
-    &__item-menu {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        z-index: 100;
-        transition: all var(--trans);
-        
     }
 
-    &__list-item:hover &__item-menu {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: all;
+    &__arrow {
+        flex: 1 1 auto;
+        display: flex;
+        justify-content: end;
+
+        @include media(">xxlg") {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+            stroke-width: 5px;
+            stroke: #2C8ACB;
+            fill: #2C8ACB;
+
+            @include media(">xxlg") {
+                display: none;
+            }
+        }
     }
 
-	&__list {
+    @include media(">xxlg") {
+        &__list-item:hover &__item-menu {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+        }
+    }
+
+    &__list {
         display: flex;
         flex-direction: row;
         gap: 15px;
 
+
         @include media("<=xxlg") {
             flex-direction: column;
+            width: 100%;
             gap: 24px;
+            max-width: 540px;
         }
-	}
+    }
 
-	&__list-item {
+    &__list-item {
         font-size: 18px;
         font-weight: 500;
         text-align: center;
-        padding: 10px;
         cursor: pointer;
         box-shadow: inset 0 0 0 1px transparent;
         border-radius: 8px;
 
-        &:hover {
-            color: #1E77BB;
-            box-shadow: inset 0 0 0 1px #1E77BB;
+        @include media(">xxlg") {
+            &:hover {
+                color: #1E77BB;
+                box-shadow: inset 0 0 0 1px #1E77BB;
+            }
         }
 
         @include media("<=xxlg") {
             padding: 0;
         }
-	}
 
-	&__phone {
+        a {
+            position: relative;
+            display: block;
+            padding: 10px;
+
+            @include media("<=xxlg") {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    &__phone {
         text-wrap: nowrap;
-	}
+    }
 
-	&__phone--mobile {
+    &__phone--mobile {
         color: var(--dark-blue);
+
         @include media(">xxlg") {
             display: none;
         }
-	}
+    }
 
     &__btn {
         padding: 18.5px 30px;
@@ -163,7 +203,8 @@
     }
 
     &__burger {
-        width: 54px; height: 54px;
+        width: 54px;
+        height: 54px;
         border-radius: 8px;
         background: var(--blue-gradient);
         padding: 14px 10px;
@@ -177,7 +218,8 @@
         span {
             display: block;
             background-color: var(--white);
-            height: 2px; width: 100%;
+            height: 2px;
+            width: 100%;
             border-radius: 1px;
             transition: all var(--trans);
         }
@@ -207,12 +249,16 @@
             span:nth-child(2) {
                 opacity: 0;
             }
+
             span:nth-child(1) {
-                top: 50%; left: 50%;
+                top: 50%;
+                left: 50%;
                 transform: translate(-50%, -50%) rotate(45deg);
             }
+
             span:nth-child(3) {
-                top: 50%; left: 50%;
+                top: 50%;
+                left: 50%;
                 transform: translate(-50%, -50%) rotate(-45deg);
             }
         }

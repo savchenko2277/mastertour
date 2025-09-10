@@ -3,17 +3,80 @@
 .header-item-menu {
     $self: &;
 
-    padding: 20px 50px;
     position: absolute;
     width: 100%;
-    background-color: #F5F4F0;
-    top: 64px;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    border-radius: 8px;
-    box-shadow: inset 0 0 0 2px #1E77BB;
+    top: 52px;
+    left: 50%;
+    padding-top: 12px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all var(--trans);
+    z-index: 999;
+    transform: translateX(-50%);
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+    }
+
+    @include media("<=xxlg") {
+        position: fixed;
+        inset: 0;
+        top: 0;
+        left: 0;
+        padding: 50px 30px 30px 30px;
+        z-index: 101;
+        transform: none;
+        background-color: #F5F4F0;
+    }
+
+    &.container {
+        @include media("<=xxlg") {
+            width: 100%;
+        }
+    }
+
+    &__close {
+        background: linear-gradient(270deg, #2FA5DE 0%, #1E77BB 97%);
+        width: 54px;
+        height: 54px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 12px;
+        right: 15px;
+
+        @include media(">xxlg") {
+            display: none;
+        }
+
+        svg {
+            width: 37px;
+            height: 37px;
+            fill: #fff;
+        }
+    }
+
+    &__wrapper {
+        padding: 20px 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        border-radius: 8px;
+        box-shadow: inset 0 0 0 2px #1E77BB;
+        background-color: #F5F4F0;
+
+        @include media("<=xxlg") {
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+            background-color: transparent;
+        }
+    }
 
     &__top {
         display: flex;
@@ -54,11 +117,19 @@
                 color: #1E77BB;
             }
         }
+
+        @include media("<=xxlg") {
+            display: none;
+        }
     }
 
     &__btn {}
 
-    &__tabs {}
+    &__tabs {
+        @include media("<=xxlg") {
+            display: none;
+        }
+    }
 
     &__tab.active {
         display: flex;
@@ -71,12 +142,24 @@
         justify-content: start;
         gap: 30px;
 
+        @include media("<=xxlg") {
+            flex-direction: column;
+            align-items: start;
+            gap: 10px;
+            padding: 10px 20px;
+            display: flex;
+        }
+
         a {
             padding: 10px;
             position: relative;
             font-size: 16px;
             font-weight: 400;
             color: var(--text-gray);
+
+            @include media("<=xxlg") {
+                color: #fff;
+            }
         }
 
         a.btn-blue {
@@ -108,7 +191,38 @@
 
     &__link {
 
-        &_blue {}
+        &_blue.btn-blue {
+            background: #fff;
+            color: #2E2E2E !important;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    &__accordeon-item {
+        display: grid;
+        grid-template-rows: max-content 0fr;
+        transition: all var(--trans);
+        border-radius: 8px;
+
+        &.active {
+            grid-template-rows: max-content 1fr;
+            padding: 15px;
+            background-color: #1951A0;
+            color: #fff;
+        }
+    }
+
+    &__accordeon-content {
+        overflow: hidden;
+    }
+
+    &__accordeon {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
     }
 
 }
