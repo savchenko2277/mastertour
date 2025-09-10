@@ -180,6 +180,74 @@ export const headerNav = (props = {}) => {
         });
     });
 
+    // Закрытие при клике вне меню
+    document.addEventListener('click', (e) => {
+        const openMenu = document.querySelector('.header-item-menu.active');
+        if (openMenu && !openMenu.contains(e.target)) {
+            openMenu.classList.remove('active');
+            console.log('закрыли');
+        }
+    });
+
+    // ПК: открытие по наведению
+    if (window.innerWidth > 1440) {
+        document.querySelectorAll('.header__list-item').forEach(item => {
+            const menuClass = item.getAttribute('data-menu-open');
+            if (!menuClass) return;
+            const targetMenu = document.querySelector(`.${menuClass}`);
+
+            item.addEventListener('mouseenter', () => {
+                headerItemsMenu.forEach(menu => menu.classList.remove('active'));
+                if (targetMenu) targetMenu.classList.add('active');
+            });
+
+            item.addEventListener('mouseleave', (e) => {
+                if (targetMenu && !targetMenu.contains(e.relatedTarget)) {
+                    targetMenu.classList.remove('active');
+                }
+            });
+
+            if (targetMenu) {
+                targetMenu.addEventListener('mouseleave', () => {
+                    targetMenu.classList.remove('active');
+                });
+            }
+        });
+    }
+
+    // Мобилка: клик по кнопке (ссылка работает отдельно)
+    document.querySelectorAll('.header__list-item').forEach(item => {
+        const btn = item.querySelector('.header__arrow');
+        const link = item.querySelector('.header-item-menu__btn');
+        if (!btn || !link) return;
+
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            headerItemsMenu.forEach(menu => menu.classList.remove('active'));
+            headerBurger.classList.remove('active');
+
+            const menuClass = item.getAttribute('data-menu-open');
+            const targetMenu = document.querySelector(`.${menuClass}`);
+
+            if (targetMenu) {
+                targetMenu.classList.add('active');
+                console.log('открыли');
+            }
+        });
+
+        link.addEventListener('click', (e) => {
+            if (e.target.closest('.header__arrow')) {
+                e.preventDefault(); // клик по кнопке — блокируем переход
+            } else {
+                console.log('переход по ссылке', link.href);
+            }
+        });
+    });
+
+    // ============== Аккордеон ==============
+
     const buildHeaderMenuAccordeon = (headerMenuEl) => {
         if (!headerMenuEl) return null;
 
@@ -211,7 +279,13 @@ export const headerNav = (props = {}) => {
         });
 
         accordeon.addEventListener('click', (e) => {
-            const header = e.target.closest('.header-item-menu__accordeon-header');
+            const arrow = e.target.closest('.header__arrow');
+            if (!arrow) return; // если кликнули не по кнопке - не трогаем аккордеон
+
+            e.preventDefault(); // блокируем переход по ссылке у кнопки
+            e.stopPropagation();
+
+            const header = arrow.closest('.header-item-menu__accordeon-header');
             if (!header) return;
 
             const item = header.parentElement;
@@ -226,8 +300,9 @@ export const headerNav = (props = {}) => {
             }
         });
 
+
         return accordeon;
-    }
+    };
 
     const initResponsiveHeaderMenu = () => {
         const menus = document.querySelectorAll('.header-item-menu');
@@ -245,10 +320,11 @@ export const headerNav = (props = {}) => {
                 if (acc) acc.remove();
             }
         });
-    }
+    };
 
     window.addEventListener('resize', initResponsiveHeaderMenu);
     document.addEventListener('DOMContentLoaded', initResponsiveHeaderMenu);
+
 
 
 })();

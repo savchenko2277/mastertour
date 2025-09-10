@@ -116,6 +116,7 @@
             stroke-width: 5px;
             stroke: #2C8ACB;
             fill: #2C8ACB;
+            transition: all var(--trans);
 
             @include media(">xxlg") {
                 display: none;

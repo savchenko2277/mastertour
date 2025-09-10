@@ -1,0 +1,45 @@
+.module-form__pl {
+  background: -webkit-gradient(linear, right top, left top, from(#2FA5DE), color-stop(97%, #1E77BB)) !important;
+  background: linear-gradient(270deg, #2FA5DE 0%, #1E77BB 97%) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+.module-form-select {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+.module-form .button {
+  background: #2E2E2E !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+}
+
+.wrapper-nights {
+  border-radius: 8px !important;
+}
+
+.wrapper-calendars {
+  border-radius: 8px !important;
+}
+
+.values {
+  border-radius: 8px;
+  overflow: hidden !important;
+}
+
+.routes .container {
+  -ms-grid-columns: 400px 1fr !important;
+  grid-template-columns: 400px 1fr !important;
+  gap: 40px !important;
+  display: -ms-grid !important;
+  display: grid !important;
+}
+@media (max-width: 1100px) {
+  .routes .container {
+    -ms-grid-columns: 1fr !important;
+    grid-template-columns: 1fr !important;
+  }
+}
