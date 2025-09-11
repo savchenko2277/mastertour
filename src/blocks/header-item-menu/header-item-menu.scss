@@ -3,7 +3,7 @@
 .header-item-menu {
     $self: &;
 
-    position: absolute;
+    position: fixed;
     width: 100%;
     top: 52px;
     left: 50%;
@@ -22,7 +22,6 @@
     }
 
     @include media("<=xxlg") {
-        position: fixed;
         inset: 0;
         top: 0;
         left: 0;
