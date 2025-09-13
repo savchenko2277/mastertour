@@ -26,8 +26,6 @@ export const headerNav = (props = {}) => {
         }
 
         #setActive = (i, e) => {
-            e?.preventDefault();
-
             e && this.props.onClick?.call(this, i);
 
             if (!this.controls[i].classList.contains(this.props.cls)) {
